@@ -1,0 +1,104 @@
+.my-products{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0px 30px 50px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.product h5{
+    font-size: 32px;
+    color: rgb(122 17 162);
+    font-weight: 700;
+}
+.product p{
+    color: rgb(67 67 67);
+}
+.product .p1{
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 0.8;
+    margin-bottom: 30px;
+}   
+.product .p2{
+    font-size: 20px;
+}   
+.product img {
+    height: 300px;
+}
+.product .img2, .product .img1{
+    width: 90%;
+}
+.product .title{
+    margin-top: 35px;
+}
+
+/* start progressBar */
+.progressBar{
+    position: relative;
+    min-width: 20%;
+    margin: auto;
+    margin-top: -125px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+.progressBar .inside-border{
+    border-radius: 50%;
+    position: absolute;
+    border: 3px solid #efefef;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    min-width: 70%;
+    min-height: 70%;
+}
+
+.progressBar h4{
+    color: rgb(122 17 162);
+    font-size: 34px;
+    font-weight: 700;
+}
+.progressBar h5{
+    color: rgb(103 103 103);
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+.progressBar h6{
+    color: rgb(176 176 176);
+    font-size: 15px;
+}
+/* end progressBar */
+
+/* start media screen */
+@media only screen and (max-width: 992px) {
+    .product img {
+        height: 250px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .progressBar{
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    .product img {
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .product img {
+        height: 150px;
+    }
+}
+/* end media screen */

@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from "react";
+import axios from "axios";
+import Products from './components/Products/Products';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () =>{
+      setLoading(true);
+      try {
+        const {data: response} = await axios.get('https://wawinner.its.ae/dev/public/api/v1/front-end/campaign');
+        console.log(response.data);
+        setData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App mt-5 container ">
+      {loading && <p className="text-center">Loading....</p>}
+      {!loading && (
+        <Products products={data} />
+      )}
     </div>
   );
 }
